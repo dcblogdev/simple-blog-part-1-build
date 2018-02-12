@@ -22,7 +22,7 @@ class User extends Password{
 
 		try {
 
-			$stmt = $this->_db->prepare('SELECT MemberID, username, password FROM blog_members WHERE username = :username');
+			$stmt = $this->_db->prepare('SELECT memberID, username, password FROM blog_members WHERE username = :username');
 			$stmt->execute(array('username' => $username));
 
 			return $stmt->fetch();
