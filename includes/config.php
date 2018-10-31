@@ -16,7 +16,7 @@ $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 date_default_timezone_set('Europe/London');
 
 //load classes as needed
-function __autoload($class) {
+spl_autoload_register(function ($class) {
    
    $class = strtolower($class);
 
@@ -38,7 +38,7 @@ function __autoload($class) {
       require_once $classpath;
 	} 		
 	 
-}
+});
 
 $user = new User($db); 
 ?>
